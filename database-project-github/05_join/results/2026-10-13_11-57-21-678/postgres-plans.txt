@@ -1,0 +1,185 @@
+Europe_1980_1999
+SELECT p.peopleid,p.first_name,p.surname,count(*) AS films FROM public.experiment_110754fa69bf4530b380ab1ea64e83b5 p JOIN public.experiment_3b8d0bd8811b4cb2985ad2acfb3f5479 c ON c.peopleid=p.peopleid JOIN public.experiment_552f0b0f8d6c4f0b8b159f730e56d673 m ON m.movieid=c.movieid JOIN public.experiment_256c0bcfd7c04f71832cfc6edbc40e2b n ON n.country_code=m.country WHERE c.credited_as='A' AND m.year_released BETWEEN 1980 AND 1999 AND n.continent='EUROPE' GROUP BY p.peopleid,p.first_name,p.surname ORDER BY films DESC,p.peopleid ASC LIMIT 20
+Limit  (cost=1085.88..1085.93 rows=20 width=25) (actual time=6.049..6.055 rows=20.00 loops=1)
+  Buffers: shared hit=932
+  ->  Sort  (cost=1085.88..1090.23 rows=1739 width=25) (actual time=6.047..6.052 rows=20.00 loops=1)
+        Sort Key: (count(*)) DESC, p.peopleid
+        Sort Method: top-N heapsort  Memory: 27kB
+        Buffers: shared hit=932
+        ->  HashAggregate  (cost=1022.22..1039.61 rows=1739 width=25) (actual time=5.708..5.845 rows=1068.00 loops=1)
+              Group Key: p.peopleid
+              Batches: 1  Memory Usage: 121kB
+              Buffers: shared hit=932
+              ->  Hash Join  (cost=627.19..1013.52 rows=1739 width=17) (actual time=2.605..5.375 rows=1508.00 loops=1)
+                    Hash Cond: (p.peopleid = c.peopleid)
+                    Buffers: shared hit=932
+                    ->  Seq Scan on experiment_110754fa69bf4530b380ab1ea64e83b5 p  (cost=0.00..265.89 rows=16489 width=17) (actual time=0.012..0.928 rows=16489.00 loops=1)
+                          Buffers: shared hit=101
+                    ->  Hash  (cost=605.45..605.45 rows=1739 width=4) (actual time=2.584..2.587 rows=1508.00 loops=1)
+                          Buckets: 2048  Batches: 1  Memory Usage: 70kB
+                          Buffers: shared hit=831
+                          ->  Nested Loop  (cost=4.10..605.45 rows=1739 width=4) (actual time=0.049..2.430 rows=1508.00 loops=1)
+                                Buffers: shared hit=831
+                                ->  Hash Join  (cost=3.81..197.08 rows=419 width=4) (actual time=0.035..0.910 rows=388.00 loops=1)
+                                      Hash Cond: ((m.country)::text = (n.country_code)::text)
+                                      Buffers: shared hit=51
+                                      ->  Seq Scan on experiment_552f0b0f8d6c4f0b8b159f730e56d673 m  (cost=0.00..188.06 rows=1940 width=7) (actual time=0.008..0.629 rows=1935.00 loops=1)
+                                            Filter: ((year_released >= 1980) AND (year_released <= 1999))
+                                            Rows Removed by Filter: 7269
+                                            Buffers: shared hit=50
+                                      ->  Hash  (cost=3.31..3.31 rows=40 width=3) (actual time=0.023..0.024 rows=40.00 loops=1)
+                                            Buckets: 1024  Batches: 1  Memory Usage: 10kB
+                                            Buffers: shared hit=1
+                                            ->  Seq Scan on experiment_256c0bcfd7c04f71832cfc6edbc40e2b n  (cost=0.00..3.31 rows=40 width=3) (actual time=0.012..0.017 rows=40.00 loops=1)
+                                                  Filter: ((continent)::text = 'EUROPE'::text)
+                                                  Rows Removed by Filter: 145
+                                                  Buffers: shared hit=1
+                                ->  Index Only Scan using experiment_3b8d0bd8811b4cb2985ad2acfb3f5479_pkey on experiment_3b8d0bd8811b4cb2985ad2acfb3f5479 c  (cost=0.29..0.93 rows=4 width=8) (actual time=0.003..0.003 rows=3.89 loops=388)
+                                      Index Cond: ((movieid = m.movieid) AND (credited_as = 'A'::text))
+                                      Heap Fetches: 0
+                                      Index Searches: 388
+                                      Buffers: shared hit=780
+Planning:
+  Buffers: shared hit=20
+Planning Time: 0.746 ms
+Execution Time: 6.153 ms
+
+Asia_1980_1999
+SELECT p.peopleid,p.first_name,p.surname,count(*) AS films FROM public.experiment_110754fa69bf4530b380ab1ea64e83b5 p JOIN public.experiment_3b8d0bd8811b4cb2985ad2acfb3f5479 c ON c.peopleid=p.peopleid JOIN public.experiment_552f0b0f8d6c4f0b8b159f730e56d673 m ON m.movieid=c.movieid JOIN public.experiment_256c0bcfd7c04f71832cfc6edbc40e2b n ON n.country_code=m.country WHERE c.credited_as='A' AND m.year_released BETWEEN 1980 AND 1999 AND n.continent='ASIA' GROUP BY p.peopleid,p.first_name,p.surname ORDER BY films DESC,p.peopleid ASC LIMIT 20
+Limit  (cost=1190.16..1190.21 rows=20 width=25) (actual time=7.459..7.465 rows=20.00 loops=1)
+  Buffers: shared hit=830
+  ->  Sort  (cost=1190.16..1195.38 rows=2087 width=25) (actual time=7.457..7.461 rows=20.00 loops=1)
+        Sort Key: (count(*)) DESC, p.peopleid
+        Sort Method: top-N heapsort  Memory: 27kB
+        Buffers: shared hit=830
+        ->  HashAggregate  (cost=1113.76..1134.63 rows=2087 width=25) (actual time=7.165..7.300 rows=766.00 loops=1)
+              Group Key: p.peopleid
+              Batches: 1  Memory Usage: 153kB
+              Buffers: shared hit=830
+              ->  Hash Join  (cost=713.51..1103.32 rows=2087 width=17) (actual time=3.891..6.884 rows=1196.00 loops=1)
+                    Hash Cond: (p.peopleid = c.peopleid)
+                    Buffers: shared hit=830
+                    ->  Seq Scan on experiment_110754fa69bf4530b380ab1ea64e83b5 p  (cost=0.00..265.89 rows=16489 width=17) (actual time=0.010..1.195 rows=16489.00 loops=1)
+                          Buffers: shared hit=101
+                    ->  Hash  (cost=687.42..687.42 rows=2087 width=4) (actual time=3.872..3.874 rows=1196.00 loops=1)
+                          Buckets: 4096  Batches: 1  Memory Usage: 75kB
+                          Buffers: shared hit=729
+                          ->  Nested Loop  (cost=4.20..687.42 rows=2087 width=4) (actual time=0.058..3.668 rows=1196.00 loops=1)
+                                Buffers: shared hit=729
+                                ->  Hash Join  (cost=3.91..197.18 rows=503 width=4) (actual time=0.043..1.730 rows=337.00 loops=1)
+                                      Hash Cond: ((m.country)::text = (n.country_code)::text)
+                                      Buffers: shared hit=51
+                                      ->  Seq Scan on experiment_552f0b0f8d6c4f0b8b159f730e56d673 m  (cost=0.00..188.06 rows=1940 width=7) (actual time=0.007..1.265 rows=1935.00 loops=1)
+                                            Filter: ((year_released >= 1980) AND (year_released <= 1999))
+                                            Rows Removed by Filter: 7269
+                                            Buffers: shared hit=50
+                                      ->  Hash  (cost=3.31..3.31 rows=48 width=3) (actual time=0.032..0.033 rows=48.00 loops=1)
+                                            Buckets: 1024  Batches: 1  Memory Usage: 10kB
+                                            Buffers: shared hit=1
+                                            ->  Seq Scan on experiment_256c0bcfd7c04f71832cfc6edbc40e2b n  (cost=0.00..3.31 rows=48 width=3) (actual time=0.011..0.023 rows=48.00 loops=1)
+                                                  Filter: ((continent)::text = 'ASIA'::text)
+                                                  Rows Removed by Filter: 137
+                                                  Buffers: shared hit=1
+                                ->  Index Only Scan using experiment_3b8d0bd8811b4cb2985ad2acfb3f5479_pkey on experiment_3b8d0bd8811b4cb2985ad2acfb3f5479 c  (cost=0.29..0.93 rows=4 width=8) (actual time=0.004..0.005 rows=3.55 loops=337)
+                                      Index Cond: ((movieid = m.movieid) AND (credited_as = 'A'::text))
+                                      Heap Fetches: 0
+                                      Index Searches: 337
+                                      Buffers: shared hit=678
+Planning:
+  Buffers: shared hit=20
+Planning Time: 0.808 ms
+Execution Time: 7.526 ms
+
+America_2000_2019
+SELECT p.peopleid,p.first_name,p.surname,count(*) AS films FROM public.experiment_110754fa69bf4530b380ab1ea64e83b5 p JOIN public.experiment_3b8d0bd8811b4cb2985ad2acfb3f5479 c ON c.peopleid=p.peopleid JOIN public.experiment_552f0b0f8d6c4f0b8b159f730e56d673 m ON m.movieid=c.movieid JOIN public.experiment_256c0bcfd7c04f71832cfc6edbc40e2b n ON n.country_code=m.country WHERE c.credited_as='A' AND m.year_released BETWEEN 2000 AND 2019 AND n.continent='AMERICA' GROUP BY p.peopleid,p.first_name,p.surname ORDER BY films DESC,p.peopleid ASC LIMIT 20
+Limit  (cost=1181.12..1181.17 rows=20 width=25) (actual time=16.637..16.643 rows=20.00 loops=1)
+  Buffers: shared hit=3386
+  ->  Sort  (cost=1181.12..1187.15 rows=2414 width=25) (actual time=16.636..16.640 rows=20.00 loops=1)
+        Sort Key: (count(*)) DESC, p.peopleid
+        Sort Method: top-N heapsort  Memory: 27kB
+        Buffers: shared hit=3386
+        ->  HashAggregate  (cost=1092.74..1116.88 rows=2414 width=25) (actual time=15.660..16.057 rows=3318.00 loops=1)
+              Group Key: p.peopleid
+              Batches: 1  Memory Usage: 345kB
+              Buffers: shared hit=3386
+              ->  Hash Join  (cost=666.97..1080.67 rows=2414 width=17) (actual time=9.714..13.897 rows=9220.00 loops=1)
+                    Hash Cond: (p.peopleid = c.peopleid)
+                    Buffers: shared hit=3386
+                    ->  Seq Scan on experiment_110754fa69bf4530b380ab1ea64e83b5 p  (cost=0.00..265.89 rows=16489 width=17) (actual time=0.006..1.039 rows=16489.00 loops=1)
+                          Buffers: shared hit=101
+                    ->  Hash  (cost=636.80..636.80 rows=2414 width=4) (actual time=9.703..9.705 rows=9220.00 loops=1)
+                          Buckets: 16384 (originally 4096)  Batches: 1 (originally 1)  Memory Usage: 453kB
+                          Buffers: shared hit=3285
+                          ->  Nested Loop  (cost=4.01..636.80 rows=2414 width=4) (actual time=0.037..8.599 rows=9220.00 loops=1)
+                                Buffers: shared hit=3285
+                                ->  Hash Join  (cost=3.73..200.56 rows=582 width=4) (actual time=0.028..1.223 rows=1610.00 loops=1)
+                                      Hash Cond: ((m.country)::text = (n.country_code)::text)
+                                      Buffers: shared hit=51
+                                      ->  Seq Scan on experiment_552f0b0f8d6c4f0b8b159f730e56d673 m  (cost=0.00..188.06 rows=3265 width=7) (actual time=0.004..0.662 rows=3262.00 loops=1)
+                                            Filter: ((year_released >= 2000) AND (year_released <= 2019))
+                                            Rows Removed by Filter: 5942
+                                            Buffers: shared hit=50
+                                      ->  Hash  (cost=3.31..3.31 rows=33 width=3) (actual time=0.021..0.022 rows=33.00 loops=1)
+                                            Buckets: 1024  Batches: 1  Memory Usage: 10kB
+                                            Buffers: shared hit=1
+                                            ->  Seq Scan on experiment_256c0bcfd7c04f71832cfc6edbc40e2b n  (cost=0.00..3.31 rows=33 width=3) (actual time=0.007..0.016 rows=33.00 loops=1)
+                                                  Filter: ((continent)::text = 'AMERICA'::text)
+                                                  Rows Removed by Filter: 152
+                                                  Buffers: shared hit=1
+                                ->  Index Only Scan using experiment_3b8d0bd8811b4cb2985ad2acfb3f5479_pkey on experiment_3b8d0bd8811b4cb2985ad2acfb3f5479 c  (cost=0.29..0.71 rows=4 width=8) (actual time=0.003..0.004 rows=5.73 loops=1610)
+                                      Index Cond: ((movieid = m.movieid) AND (credited_as = 'A'::text))
+                                      Heap Fetches: 0
+                                      Index Searches: 1610
+                                      Buffers: shared hit=3234
+Planning:
+  Buffers: shared hit=20
+Planning Time: 0.606 ms
+Execution Time: 16.689 ms
+
+All_1960_1979
+SELECT p.peopleid,p.first_name,p.surname,count(*) AS films FROM public.experiment_110754fa69bf4530b380ab1ea64e83b5 p JOIN public.experiment_3b8d0bd8811b4cb2985ad2acfb3f5479 c ON c.peopleid=p.peopleid JOIN public.experiment_552f0b0f8d6c4f0b8b159f730e56d673 m ON m.movieid=c.movieid JOIN public.experiment_256c0bcfd7c04f71832cfc6edbc40e2b n ON n.country_code=m.country WHERE c.credited_as='A' AND m.year_released BETWEEN 1960 AND 1979 GROUP BY p.peopleid,p.first_name,p.surname ORDER BY films DESC,p.peopleid ASC LIMIT 20
+Limit  (cost=1962.14..1962.19 rows=20 width=25) (actual time=18.852..18.859 rows=20.00 loops=1)
+  Buffers: shared hit=406
+  ->  Sort  (cost=1962.14..1980.02 rows=7151 width=25) (actual time=18.850..18.856 rows=20.00 loops=1)
+        Sort Key: (count(*)) DESC, p.peopleid
+        Sort Method: top-N heapsort  Memory: 27kB
+        Buffers: shared hit=406
+        ->  HashAggregate  (cost=1700.35..1771.86 rows=7151 width=25) (actual time=17.910..18.324 rows=3030.00 loops=1)
+              Group Key: p.peopleid
+              Batches: 1  Memory Usage: 409kB
+              Buffers: shared hit=406
+              ->  Hash Join  (cost=686.79..1664.59 rows=7151 width=17) (actual time=3.951..16.266 rows=6344.00 loops=1)
+                    Hash Cond: ((m.country)::text = (n.country_code)::text)
+                    Buffers: shared hit=406
+                    ->  Hash Join  (cost=681.62..1640.22 rows=7151 width=20) (actual time=3.868..14.822 rows=6344.00 loops=1)
+                          Hash Cond: (c.peopleid = p.peopleid)
+                          Buffers: shared hit=405
+                          ->  Hash Join  (cost=209.62..1149.45 rows=7151 width=7) (actual time=0.991..10.230 rows=6344.00 loops=1)
+                                Hash Cond: (c.movieid = m.movieid)
+                                Buffers: shared hit=304
+                                ->  Seq Scan on experiment_3b8d0bd8811b4cb2985ad2acfb3f5479 c  (cost=0.00..839.62 rows=38155 width=8) (actual time=0.007..4.967 rows=38170.00 loops=1)
+                                      Filter: ((credited_as)::text = 'A'::text)
+                                      Rows Removed by Filter: 8680
+                                      Buffers: shared hit=254
+                                ->  Hash  (cost=188.06..188.06 rows=1725 width=7) (actual time=0.979..0.980 rows=1720.00 loops=1)
+                                      Buckets: 2048  Batches: 1  Memory Usage: 82kB
+                                      Buffers: shared hit=50
+                                      ->  Seq Scan on experiment_552f0b0f8d6c4f0b8b159f730e56d673 m  (cost=0.00..188.06 rows=1725 width=7) (actual time=0.005..0.744 rows=1720.00 loops=1)
+                                            Filter: ((year_released >= 1960) AND (year_released <= 1979))
+                                            Rows Removed by Filter: 7484
+                                            Buffers: shared hit=50
+                          ->  Hash  (cost=265.89..265.89 rows=16489 width=17) (actual time=2.862..2.863 rows=16489.00 loops=1)
+                                Buckets: 32768  Batches: 1  Memory Usage: 1063kB
+                                Buffers: shared hit=101
+                                ->  Seq Scan on experiment_110754fa69bf4530b380ab1ea64e83b5 p  (cost=0.00..265.89 rows=16489 width=17) (actual time=0.003..1.111 rows=16489.00 loops=1)
+                                      Buffers: shared hit=101
+                    ->  Hash  (cost=2.85..2.85 rows=185 width=3) (actual time=0.079..0.080 rows=185.00 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 15kB
+                          Buffers: shared hit=1
+                          ->  Seq Scan on experiment_256c0bcfd7c04f71832cfc6edbc40e2b n  (cost=0.00..2.85 rows=185 width=3) (actual time=0.038..0.053 rows=185.00 loops=1)
+                                Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=20
+Planning Time: 0.896 ms
+Execution Time: 18.918 ms
+

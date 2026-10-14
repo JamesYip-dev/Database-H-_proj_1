@@ -1,0 +1,18 @@
+rows=9204
+hot_records=64
+patterns=dispersed,hot
+workers=1,4,8,16
+groups=3
+warmup_seconds=3.0
+measured_seconds=30.0
+read_percent=80
+write_percent=20
+seed=20261013
+connections_and_restore_excluded=true
+throughput_seconds_include_finishing_started_batches=true
+CSV: immutable in-memory committed snapshots, serialized full-file durable writes
+DB: one connection per client, prepared statements, READ COMMITTED, autocommit
+correctness: exact persisted counters from completed writes, exact 80/20 ratio, per-client monotonic reads
+same per-client deterministic request stream; completed stream lengths differ with throughput
+latency medians calculated from every completed request; per-worker summaries and per-record increments saved
+scope: one Java process, no process crash, power loss or multiple file-writing processes

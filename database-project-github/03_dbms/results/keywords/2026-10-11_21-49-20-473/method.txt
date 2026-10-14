@@ -1,0 +1,6 @@
+case_sensitive=true
+seed_base=20261011
+groups=3
+warmup_per_keyword=10
+measured_per_keyword=30
+summary=median of equally repeated single-query timings; warmup excluded

@@ -1,0 +1,7 @@
+movieid = 4603
+Seq Scan on experiment_868791fb13d942c981b4e724798e0e9f  (cost=0.00..179.05 rows=1 width=20)
+  Filter: (movieid = 4603)
+
+Index Scan using experiment_c0a3836876ae47c3b418431c490d379d_id on experiment_c0a3836876ae47c3b418431c490d379d  (cost=0.29..8.30 rows=1 width=20)
+  Index Cond: (movieid = 4603)
+
