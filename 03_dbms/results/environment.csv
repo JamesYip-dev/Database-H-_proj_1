@@ -1,0 +1,19 @@
+engine,setting,value
+postgres,version,"PostgreSQL 18.6 (Debian 18.6-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit"
+postgres,driver,42.7.13
+postgres,fsync,on
+postgres,synchronous_commit,on
+postgres,shared_buffers,1GB
+postgres,max_connections,200
+postgres,full_page_writes,on
+postgres,movies,
+postgres,people,
+opengauss,version,"(openGauss 6.0.0 build aee4abd5) compiled at 2024-09-29 19:14:27 commit 0 last mr   on x86_64-unknown-linux-gnu, compiled by g++ (GCC) 10.3.0, 64-bit"
+opengauss,driver,/*$mvn.project.property.parsedversion.osgiversion$*/
+opengauss,fsync,on
+opengauss,synchronous_commit,on
+opengauss,shared_buffers,1GB
+opengauss,max_connections,200
+opengauss,full_page_writes,on
+opengauss,movies,"{orientation=row,compression=no}"
+opengauss,people,"{orientation=row,compression=no}"

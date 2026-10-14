@@ -1,0 +1,161 @@
+round,phase,order,method,elapsed_ms
+1,warmup,1,CSV scan,13.393542
+1,warmup,2,Java memory index,0.006150
+1,warmup,3,DB scan,5.260546
+1,warmup,4,DB index,0.919495
+2,warmup,1,Java memory index,0.003444
+2,warmup,2,DB scan,1.947340
+2,warmup,3,DB index,1.023327
+2,warmup,4,CSV scan,7.390717
+3,warmup,1,DB scan,1.716814
+3,warmup,2,DB index,0.719370
+3,warmup,3,CSV scan,5.687993
+3,warmup,4,Java memory index,0.005292
+4,warmup,1,DB index,1.317630
+4,warmup,2,CSV scan,5.922531
+4,warmup,3,Java memory index,0.005387
+4,warmup,4,DB scan,1.567122
+5,warmup,1,CSV scan,5.115322
+5,warmup,2,Java memory index,0.004783
+5,warmup,3,DB scan,1.371313
+5,warmup,4,DB index,0.735767
+6,warmup,1,Java memory index,0.004905
+6,warmup,2,DB scan,1.000016
+6,warmup,3,DB index,0.710258
+6,warmup,4,CSV scan,5.213404
+7,warmup,1,DB scan,1.326016
+7,warmup,2,DB index,0.611352
+7,warmup,3,CSV scan,4.379303
+7,warmup,4,Java memory index,0.003831
+8,warmup,1,DB index,0.799600
+8,warmup,2,CSV scan,7.591492
+8,warmup,3,Java memory index,0.003511
+8,warmup,4,DB scan,1.789207
+9,warmup,1,CSV scan,4.814189
+9,warmup,2,Java memory index,0.002821
+9,warmup,3,DB scan,1.253174
+9,warmup,4,DB index,0.573485
+10,warmup,1,Java memory index,0.001929
+10,warmup,2,DB scan,0.989102
+10,warmup,3,DB index,0.786822
+10,warmup,4,CSV scan,8.889383
+11,measured,1,DB scan,1.849683
+11,measured,2,DB index,0.847375
+11,measured,3,CSV scan,3.913109
+11,measured,4,Java memory index,0.005346
+12,measured,1,DB index,1.206310
+12,measured,2,CSV scan,4.671793
+12,measured,3,Java memory index,0.004141
+12,measured,4,DB scan,1.425965
+13,measured,1,CSV scan,3.305998
+13,measured,2,Java memory index,0.002790
+13,measured,3,DB scan,1.273118
+13,measured,4,DB index,0.934769
+14,measured,1,Java memory index,0.003198
+14,measured,2,DB scan,2.194514
+14,measured,3,DB index,1.231883
+14,measured,4,CSV scan,5.322515
+15,measured,1,DB scan,1.707304
+15,measured,2,DB index,0.676589
+15,measured,3,CSV scan,2.683050
+15,measured,4,Java memory index,0.004405
+16,measured,1,DB index,1.018090
+16,measured,2,CSV scan,2.860026
+16,measured,3,Java memory index,0.002755
+16,measured,4,DB scan,1.132084
+17,measured,1,CSV scan,2.650818
+17,measured,2,Java memory index,0.002415
+17,measured,3,DB scan,2.097032
+17,measured,4,DB index,0.941848
+18,measured,1,Java memory index,0.004214
+18,measured,2,DB scan,1.929146
+18,measured,3,DB index,0.907510
+18,measured,4,CSV scan,4.889373
+19,measured,1,DB scan,1.307347
+19,measured,2,DB index,0.500171
+19,measured,3,CSV scan,2.094911
+19,measured,4,Java memory index,0.003464
+20,measured,1,DB index,0.591660
+20,measured,2,CSV scan,3.099841
+20,measured,3,Java memory index,0.004246
+20,measured,4,DB scan,1.604277
+21,measured,1,CSV scan,2.101339
+21,measured,2,Java memory index,0.003080
+21,measured,3,DB scan,0.990007
+21,measured,4,DB index,0.467897
+22,measured,1,Java memory index,0.002688
+22,measured,2,DB scan,1.186163
+22,measured,3,DB index,0.590341
+22,measured,4,CSV scan,2.347533
+23,measured,1,DB scan,1.808213
+23,measured,2,DB index,1.277238
+23,measured,3,CSV scan,3.772961
+23,measured,4,Java memory index,0.003957
+24,measured,1,DB index,1.626845
+24,measured,2,CSV scan,3.407763
+24,measured,3,Java memory index,0.003713
+24,measured,4,DB scan,1.128485
+25,measured,1,CSV scan,3.241328
+25,measured,2,Java memory index,0.003010
+25,measured,3,DB scan,1.545742
+25,measured,4,DB index,0.909072
+26,measured,1,Java memory index,0.001798
+26,measured,2,DB scan,1.190891
+26,measured,3,DB index,0.967178
+26,measured,4,CSV scan,3.267568
+27,measured,1,DB scan,2.484129
+27,measured,2,DB index,0.673188
+27,measured,3,CSV scan,5.264683
+27,measured,4,Java memory index,0.005417
+28,measured,1,DB index,1.060996
+28,measured,2,CSV scan,5.061675
+28,measured,3,Java memory index,0.005402
+28,measured,4,DB scan,1.363863
+29,measured,1,CSV scan,6.662134
+29,measured,2,Java memory index,0.009976
+29,measured,3,DB scan,2.851144
+29,measured,4,DB index,0.810694
+30,measured,1,Java memory index,0.006478
+30,measured,2,DB scan,1.742689
+30,measured,3,DB index,0.715110
+30,measured,4,CSV scan,4.306255
+31,measured,1,DB scan,1.506699
+31,measured,2,DB index,0.939591
+31,measured,3,CSV scan,3.249251
+31,measured,4,Java memory index,0.005728
+32,measured,1,DB index,1.027564
+32,measured,2,CSV scan,3.904016
+32,measured,3,Java memory index,0.007487
+32,measured,4,DB scan,1.740047
+33,measured,1,CSV scan,3.433764
+33,measured,2,Java memory index,0.002559
+33,measured,3,DB scan,1.128579
+33,measured,4,DB index,0.520458
+34,measured,1,Java memory index,0.001999
+34,measured,2,DB scan,1.165915
+34,measured,3,DB index,0.493147
+34,measured,4,CSV scan,3.429193
+35,measured,1,DB scan,1.272658
+35,measured,2,DB index,0.784604
+35,measured,3,CSV scan,3.351765
+35,measured,4,Java memory index,0.005063
+36,measured,1,DB index,0.843794
+36,measured,2,CSV scan,3.300165
+36,measured,3,Java memory index,0.004930
+36,measured,4,DB scan,1.401189
+37,measured,1,CSV scan,3.396106
+37,measured,2,Java memory index,0.003436
+37,measured,3,DB scan,2.059258
+37,measured,4,DB index,0.627004
+38,measured,1,Java memory index,0.004546
+38,measured,2,DB scan,1.519851
+38,measured,3,DB index,0.773241
+38,measured,4,CSV scan,3.389078
+39,measured,1,DB scan,1.111255
+39,measured,2,DB index,0.560100
+39,measured,3,CSV scan,3.231631
+39,measured,4,Java memory index,0.004060
+40,measured,1,DB index,0.704784
+40,measured,2,CSV scan,9.359790
+40,measured,3,Java memory index,0.005804
+40,measured,4,DB scan,2.403427

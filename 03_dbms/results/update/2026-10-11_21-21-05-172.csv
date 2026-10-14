@@ -1,0 +1,121 @@
+round,phase,order,method,elapsed_ms
+1,warmup,1,Java CSV,27.437466
+1,warmup,2,PostgreSQL,12.904606
+1,warmup,3,openGauss,19.816645
+2,warmup,1,PostgreSQL,9.767762
+2,warmup,2,openGauss,16.729024
+2,warmup,3,Java CSV,61.522005
+3,warmup,1,openGauss,18.275294
+3,warmup,2,Java CSV,27.496162
+3,warmup,3,PostgreSQL,10.064970
+4,warmup,1,Java CSV,30.750026
+4,warmup,2,PostgreSQL,9.376828
+4,warmup,3,openGauss,18.674461
+5,warmup,1,PostgreSQL,14.261282
+5,warmup,2,openGauss,21.276474
+5,warmup,3,Java CSV,25.978510
+6,warmup,1,openGauss,22.341253
+6,warmup,2,Java CSV,36.418072
+6,warmup,3,PostgreSQL,13.291294
+7,warmup,1,Java CSV,30.331566
+7,warmup,2,PostgreSQL,23.143712
+7,warmup,3,openGauss,17.854681
+8,warmup,1,PostgreSQL,14.195594
+8,warmup,2,openGauss,19.441482
+8,warmup,3,Java CSV,29.525561
+9,warmup,1,openGauss,19.098587
+9,warmup,2,Java CSV,69.584249
+9,warmup,3,PostgreSQL,13.420636
+10,warmup,1,Java CSV,31.915047
+10,warmup,2,PostgreSQL,13.241238
+10,warmup,3,openGauss,22.581980
+11,measured,1,PostgreSQL,15.545528
+11,measured,2,openGauss,16.686944
+11,measured,3,Java CSV,46.670961
+12,measured,1,openGauss,19.806210
+12,measured,2,Java CSV,30.975488
+12,measured,3,PostgreSQL,20.483755
+13,measured,1,Java CSV,33.307608
+13,measured,2,PostgreSQL,10.241812
+13,measured,3,openGauss,19.375900
+14,measured,1,PostgreSQL,10.436512
+14,measured,2,openGauss,18.004268
+14,measured,3,Java CSV,26.906446
+15,measured,1,openGauss,21.922622
+15,measured,2,Java CSV,28.827287
+15,measured,3,PostgreSQL,10.545561
+16,measured,1,Java CSV,26.566986
+16,measured,2,PostgreSQL,13.180237
+16,measured,3,openGauss,21.783645
+17,measured,1,PostgreSQL,9.663049
+17,measured,2,openGauss,18.494801
+17,measured,3,Java CSV,68.537562
+18,measured,1,openGauss,16.660497
+18,measured,2,Java CSV,25.168750
+18,measured,3,PostgreSQL,10.215436
+19,measured,1,Java CSV,30.726277
+19,measured,2,PostgreSQL,11.239160
+19,measured,3,openGauss,19.574728
+20,measured,1,PostgreSQL,10.317609
+20,measured,2,openGauss,16.857924
+20,measured,3,Java CSV,73.511521
+21,measured,1,openGauss,17.806885
+21,measured,2,Java CSV,29.234523
+21,measured,3,PostgreSQL,10.755937
+22,measured,1,Java CSV,75.727118
+22,measured,2,PostgreSQL,9.969668
+22,measured,3,openGauss,21.446801
+23,measured,1,PostgreSQL,10.432228
+23,measured,2,openGauss,17.234155
+23,measured,3,Java CSV,25.033800
+24,measured,1,openGauss,18.764517
+24,measured,2,Java CSV,33.900270
+24,measured,3,PostgreSQL,19.530231
+25,measured,1,Java CSV,27.515591
+25,measured,2,PostgreSQL,12.762398
+25,measured,3,openGauss,15.933505
+26,measured,1,PostgreSQL,14.978680
+26,measured,2,openGauss,17.149390
+26,measured,3,Java CSV,25.091546
+27,measured,1,openGauss,18.194417
+27,measured,2,Java CSV,30.406869
+27,measured,3,PostgreSQL,13.044101
+28,measured,1,Java CSV,25.696813
+28,measured,2,PostgreSQL,12.759521
+28,measured,3,openGauss,21.338300
+29,measured,1,PostgreSQL,13.061434
+29,measured,2,openGauss,26.027232
+29,measured,3,Java CSV,28.008991
+30,measured,1,openGauss,16.948225
+30,measured,2,Java CSV,30.100212
+30,measured,3,PostgreSQL,13.848129
+31,measured,1,Java CSV,29.849859
+31,measured,2,PostgreSQL,13.114821
+31,measured,3,openGauss,27.279468
+32,measured,1,PostgreSQL,9.008155
+32,measured,2,openGauss,17.956212
+32,measured,3,Java CSV,29.118713
+33,measured,1,openGauss,21.483266
+33,measured,2,Java CSV,26.428059
+33,measured,3,PostgreSQL,9.803948
+34,measured,1,Java CSV,29.321012
+34,measured,2,PostgreSQL,12.621465
+34,measured,3,openGauss,20.247080
+35,measured,1,PostgreSQL,11.274495
+35,measured,2,openGauss,16.596399
+35,measured,3,Java CSV,30.329636
+36,measured,1,openGauss,20.965651
+36,measured,2,Java CSV,30.023991
+36,measured,3,PostgreSQL,11.380484
+37,measured,1,Java CSV,29.609053
+37,measured,2,PostgreSQL,8.719341
+37,measured,3,openGauss,27.718890
+38,measured,1,PostgreSQL,9.051174
+38,measured,2,openGauss,19.756929
+38,measured,3,Java CSV,28.658985
+39,measured,1,openGauss,17.866101
+39,measured,2,Java CSV,124.011500
+39,measured,3,PostgreSQL,13.594230
+40,measured,1,Java CSV,29.867222
+40,measured,2,PostgreSQL,12.710226
+40,measured,3,openGauss,19.149607

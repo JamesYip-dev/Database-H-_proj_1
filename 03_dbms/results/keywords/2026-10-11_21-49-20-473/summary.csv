@@ -1,0 +1,10 @@
+group,method,queries,median_ms
+1,Java CSV,1200,2.318183
+1,PostgreSQL,1200,0.967586
+1,openGauss,1200,1.511958
+2,Java CSV,1200,2.402071
+2,PostgreSQL,1200,1.046224
+2,openGauss,1200,1.641514
+3,Java CSV,1200,2.310188
+3,PostgreSQL,1200,0.908206
+3,openGauss,1200,1.429123
