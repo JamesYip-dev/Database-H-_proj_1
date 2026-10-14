@@ -1,7 +1,0 @@
-groups=3
-warmup=10
-measured=30
-tasks=4
-Java CSV includes loading and hash indexes; Java memory excludes those, not aggregation
-diagnostics: Europe/Asia, 6 variants, 3 groups, 10 warmup + 30 measured each
-diagnostic parameters and statistics on experiment copies only, separate from main comparison

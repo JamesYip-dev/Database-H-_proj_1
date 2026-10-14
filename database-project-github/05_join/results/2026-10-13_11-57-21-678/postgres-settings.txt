@@ -1,1 +1,0 @@
-{enable_nestloop=on, enable_hashjoin=on, enable_mergejoin=on, enable_indexscan=on, default_statistics_target=100, work_mem=4MB, random_page_cost=4, seq_page_cost=1, cpu_tuple_cost=0.01, effective_cache_size=4GB}

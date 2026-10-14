@@ -1,8 +1,0 @@
-movieid = 4603
-Seq Scan on experiment_395671ee4af0455eb1c40e9c7734bbe4  (cost=0.00..175.05 rows=1 width=20)
-  Filter: (movieid = 4603)
-
-[Bypass]
-Index Scan using experiment_c2b3edc1c9f6430b851a7dfb30d99936_id on experiment_c2b3edc1c9f6430b851a7dfb30d99936  (cost=0.00..8.27 rows=1 width=20)
-  Index Cond: (movieid = 4603)
-
